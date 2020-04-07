@@ -1,6 +1,6 @@
 L.GeoIP = L.extend({
 
-    getPosition: function (ip) {
+    getPosition: function () {
         var url = "https://freegeoip.live/json/";
         var result = L.latLng(0, 0);
         var xhr = new XMLHttpRequest();
@@ -19,8 +19,8 @@ L.GeoIP = L.extend({
         return result;
     },
 
-    centerMapOnPosition: function (map, zoom, ip) {
-        var position = L.GeoIP.getPosition(ip);
+    centerMapOnPosition: function (map, zoom) {
+        var position = L.GeoIP.getPosition();
         map.setView(position, zoom);
     }
 });
