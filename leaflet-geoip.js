@@ -3,13 +3,6 @@ L.GeoIP = L.extend({
     getPosition: function (ip) {
         var url = "https://freegeoip.live/json/";
         var result = L.latLng(0, 0);
-
-        if (ip !== undefined) {
-            url = url + ip;
-        } else {
-            //lookup our own ip address
-        }
-
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, false);
         xhr.onload = function () {
